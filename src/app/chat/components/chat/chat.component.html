@@ -1,0 +1,124 @@
+<app-nav-bar></app-nav-bar>
+
+<div class="flex flex-col overflow-hidden">
+    <div>
+        <div class="flex h-screen bg-gray-100">
+            <aside class="w-1/4 bg-white p-5 border-r">
+                <div class="flex flex-row justify-center">
+                    <h1 class="text-center font-semibold text-gray-900 text-2xl">Mensajes</h1>
+                </div>
+
+                <hr class="my-4" />
+                <div class="flex flex-col space-y-4 overflow-y-auto">
+                    <div class="flex items-center space-x-3 justify-end">
+                        <!-- algo -->
+                        <div>
+                            <div class="text-sm font-semibold">{{user?.displayName}}</div>
+                            <div class="text-xs text-gray-500">26 feb.</div>
+                            <div class="text-sm">Meta Oculus Quest 2 64gb</div>
+                            <div class="text-sm text-gray-500">Pues si no hace envío no, lo siento</div>
+                        </div>
+                    </div>
+                </div>
+            </aside>
+            <main class="flex-1 flex">
+                <section class="w-3/5 p-5 border-r">
+                    <div class="flex items-center justify-between">
+                        <div class="flex items-center space-x-3">
+                            <!-- algo -->
+                            <div>
+                                <div class="text-lg font-semibold">{{user?.displayName}}</div>
+                                <div class="text-sm text-gray-500">
+                                    El vendedor prefiere vender en persona. Pregúntale y quizá te lo envíe.
+                                </div>
+                            </div>
+                        </div>
+                        <div class="text-gray-500">lunes, 26 feb.</div>
+                    </div>
+                    <div class="mt-6 flex flex-col space-y-4">
+
+                        <!-- @for (chat of _cs.; track $index) { -->
+                        <div class="flex justify-end items-start space-x-2">
+                            <!-- algo -->
+                            <div class="bg-gray-200 rounded-lg p-3">
+                                <div class="text-sm">Holaa estan bien?</div>
+                                <div class="text-xs text-gray-500">19:34</div>
+                            </div>
+
+                        </div>
+                        <div class="flex justify-end  items-center space-x-2">
+                            <!-- algo -->
+                            <div class="bg-gray-200 rounded-lg p-3">
+                                <div class="text-sm">Holaa estan bien?</div>
+                                <div class="text-xs text-gray-500">19:34</div>
+                            </div>
+
+                        </div>
+                        <div class="flex justify-start items-center space-x-2">
+                            <!-- algo -->
+                            <div class="bg-white border rounded-lg p-3">
+                                <div class="text-sm">Holaa estan bien?</div>
+                                <div class="text-xs text-gray-500">19:34</div>
+                            </div>
+
+                        </div>
+                        <!-- } -->
+                    </div>
+                    <div class="mt-6">
+                        <div class="relative">
+                            <textarea placeholder="Escribe un mensaje..."
+                                class="w-full px-4 py-2 pr-10 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500"></textarea>
+                            <button type="button" (click)="sendMessage()"
+                                class="absolute inset-y-0 right-0 px-4 py-2 bg-blue-500 text-white rounded-r-md">
+                                Enviar
+                            </button>
+                        </div>
+
+
+                    </div>
+                </section>
+                <section class="w-2/5 p-5">
+                    <div class="flex items-center justify-between">
+                        <div>
+                            <div class="text-lg font-semibold">{{user?.displayName}}</div>
+                            <div class="flex items-center mt-1">
+                                <div class="flex">
+                                    <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 text-yellow-400"
+                                        viewBox="0 0 20 20" fill="currentColor">
+                                        <path fill-rule="evenodd"
+                                            d="M10 3.83l1.88 3.805 4.213.614-3.048 2.97.718 4.198L10 14.421l-3.76 1.97.718-4.198-3.048-2.97 4.213-.614L10 3.83zM10 2l-2.79 5.64L3.05 8.76l5.05.735L10 15l1.9-5.505 5.05-.735-4.16-2.12L10 2z"
+                                            clip-rule="evenodd" />
+                                    </svg>
+                                    <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 text-yellow-400"
+                                        viewBox="0 0 20 20" fill="currentColor">
+                                        <path fill-rule="evenodd"
+                                            d="M10 3.83l1.88 3.805 4.213.614-3.048 2.97.718 4.198L10 14.421l-3.76 1.97.718-4.198-3.048-2.97 4.213-.614L10 3.83zM10 2l-2.79 5.64L3.05 8.76l5.05.735L10 15l1.9-5.505 5.05-.735-4.16-2.12L10 2z"
+                                            clip-rule="evenodd" />
+                                    </svg>
+                                    <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 text-yellow-400"
+                                        viewBox="0 0 20 20" fill="currentColor">
+                                        <path fill-rule="evenodd"
+                                            d="M10 3.83l1.88 3.805 4.213.614-3.048 2.97.718 4.198L10 14.421l-3.76 1.97.718-4.198-3.048-2.97 4.213-.614L10 3.83zM10 2l-2.79 5.64L3.05 8.76l5.05.735L10 15l1.9-5.505 5.05-.735-4.16-2.12L10 2z"
+                                            clip-rule="evenodd" />
+                                    </svg>
+                                    <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 text-yellow-400"
+                                        viewBox="0 0 20 20" fill="currentColor">
+                                        <path fill-rule="evenodd"
+                                            d="M10 3.83l1.88 3.805 4.213.614-3.048 2.97.718 4.198L10 14.421l-3.76 1.97.718-4.198-3.048-2.97 4.213-.614L10 3.83zM10 2l-2.79 5.64L3.05 8.76l5.05.735L10 15l1.9-5.505 5.05-.735-4.16-2.12L10 2z"
+                                            clip-rule="evenodd" />
+                                    </svg>
+                                    <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 text-yellow-400"
+                                        viewBox="0 0 20 20" fill="currentColor">
+                                        <path fill-rule="evenodd"
+                                            d="M10 3.83l1.88 3.805 4.213.614-3.048 2.97.718 4.198L10 14.421l-3.76 1.97.718-4.198-3.048-2.97 4.213-.614L10 3.83zM10 2l-2.79 5.64L3.05 8.76l5.05.735L10 15l1.9-5.505 5.05-.735-4.16-2.12L10 2z"
+                                            clip-rule="evenodd" />
+                                    </svg>
+                                </div>
+
+                            </div>
+                            <div class="text-sm text-gray-500 mt-1">303,1km de ti</div>
+                            <div class="text-sm text-gray-500">Se unió en 2020</div>
+                        </div>
+
+                    </div>
+                    <div class="mt-20 lg:hidden"></div>

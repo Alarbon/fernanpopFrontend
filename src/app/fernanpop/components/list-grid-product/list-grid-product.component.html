@@ -1,0 +1,39 @@
+<div class="max-w-screen-lg mx-auto px-6 ">
+    <div class="py-20">
+        <h1 class="text-4xl font-semibold text-center mb-2">
+            Compra y vende cosas de segunda mano
+        </h1>
+        <h1 class="text-4xl text-center mb-6">
+            casi, casi, sin moverte del sofá
+        </h1>
+
+        <div>
+            <h2 class="text-3xl font-semibold mb-4">Novedades</h2>
+            <div
+                class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6 sm:gap-8 md:gap-8 lg:gap-10">
+
+                @if (!productResponse()) {
+                @for (item of [].constructor(8); track $index) {
+                <app-skeletons-card-product></app-skeletons-card-product>
+                }
+                }@else {
+                @for (item of productResponse()?.products; track $index) {
+                <app-card-product-item [product]="item" (click)="goToProduct(item._id!)"
+                    class="hover:-translate-y-2 transition-all hover:cursor-pointer"></app-card-product-item>
+                }
+                }
+
+            </div>
+
+            @if (productResponse()?.next) {
+            <div class="flex justify-center py-6 mt-6">
+                <button class="inline-flex items-center justify-center whitespace-nowrap rounded-full 
+                    text-sm font-bold bg-[#13c1ac] text-white transition-colors focus-visible:outline-none
+                     h-12 px-8 py-2" (click)="loadMore()">
+                    Cargar más
+                </button>
+            </div>
+            }
+        </div>
+    </div>
+</div>

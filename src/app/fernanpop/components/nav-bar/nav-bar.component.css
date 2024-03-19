@@ -1,0 +1,9 @@
+/* Estilo para el ícono activo */
+button.router-link-active svg path {
+    fill: yellow; /* Cambia el color del ícono cuando el enlace está activo */
+}
+
+/* Estilo para el texto activo */
+button.router-link-active .text-xs {
+    color: yellow; /* Cambia el color del texto cuando el enlace está activo */
+}

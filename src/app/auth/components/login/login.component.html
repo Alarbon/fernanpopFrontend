@@ -1,0 +1,83 @@
+<div class="flex flex-col items-center justify-center min-h-screen bg-[#535e63] p-4">
+    <div class="relative max-w-sm rounded-xl bg-white p-6 shadow-xl">
+        <button (click)="redirectToHome()" class="absolute top-3 right-3 -mt-2 -mr-2 p-2  ">
+            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" viewBox="0 0 24 24">
+                <path fill="#29363D" fill-rule="evenodd"
+                    d="M4.47 4.47a.75.75 0 0 1 1.06 0L12 10.94l6.47-6.47a.75.75 0 1 1 1.06 1.06L13.06 12l6.47 6.47a.75.75 0 1 1-1.06 1.06L12 13.06l-6.47 6.47a.75.75 0 0 1-1.06-1.06L10.94 12 4.47 5.53a.75.75 0 0 1 0-1.06Z"
+                    clip-rule="evenodd"></path>
+            </svg>
+        </button>
+
+        <div class="mb-4 flex justify-center">
+            <img class="w-40" src="assets/images/auth/onboarding_received_package.svg"
+                alt="onboarding_received_package">
+        </div>
+        <h2 class="mb-2 text-center text-lg font-semibold">Compra y vende en Fernanpop</h2>
+        <p class="mb-6 text-center text-sm text-gray-600">
+            Consigue los mejores precios y gana dinero con lo que no usas.
+        </p>
+        <div class="space-y-2">
+            <button (click)="loginGoogle()"
+                class="inline-flex items-center justify-center whitespace-nowrap rounded-full text-sm font-medium ring-offset-background transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 
+                disabled:pointer-events-none disabled:opacity-50 hover:bg-gray-100 h-10 px-4 py-2 w-full bg-transparent border-2 border-black text-black hover:text-[#535e63]">
+                <svg class="fill-current" xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none"
+                    viewBox="0 0 24 24">
+                    <path fill="#4285F4" fill-rule="evenodd"
+                        d="M21.6 12.227c0-.709-.064-1.39-.182-2.045H12v3.868h5.382a4.6 4.6 0 0 1-1.996 3.018l3.232 2.51c1.891-1.742 2.982-4.305 2.982-7.35Z"
+                        clip-rule="evenodd"></path>
+                    <path fill="#34A853" fill-rule="evenodd"
+                        d="M12 22c2.7 0 4.964-.895 6.618-2.423l-3.232-2.509c-.895.6-2.04.955-3.386.955-2.605 0-4.81-1.76-5.595-4.123l-3.341 2.59A9.996 9.996 0 0 0 12 22Z"
+                        clip-rule="evenodd"></path>
+                    <path fill="#FBBC05" fill-rule="evenodd"
+                        d="M6.405 13.9c-.2-.6-.314-1.24-.314-1.9 0-.66.114-1.3.314-1.9L3.064 7.51A9.996 9.996 0 0 0 2 12c0 1.614.386 3.14 1.064 4.49l3.34-2.59Z"
+                        clip-rule="evenodd"></path>
+                    <path fill="#EA4335" fill-rule="evenodd"
+                        d="M12 5.977c1.468 0 2.786.505 3.823 1.496l2.868-2.868C16.959 2.99 14.696 2 12 2 8.09 2 4.71 4.24 3.064 7.51l3.34 2.59C7.192 7.736 9.396 5.977 12 5.977Z"
+                        clip-rule="evenodd"></path>
+                </svg>
+                <span class="ml-4"> Continuar con Google</span>
+            </button>
+            <button (click)="loginGoogle()"
+                class="inline-flex items-center justify-center whitespace-nowrap rounded-full text-sm font-medium ring-offset-background transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 hover:bg-gray-100 h-10 px-4 py-2 w-full bg-transparent border-2 border-black text-black">
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" viewBox="0 0 24 24">
+                    <path fill="#1877F2"
+                        d="M22 12c0-5.523-4.477-10-10-10S2 6.477 2 12c0 4.991 3.657 9.128 8.438 9.878V14.89h-2.54V12h2.54V9.797c0-2.506 1.492-3.89 3.777-3.89 1.094 0 2.238.194 2.238.194v2.461h-1.26c-1.243 0-1.63.771-1.63 1.562V12h2.773l-.443 2.89h-2.33v6.988C18.343 21.128 22 16.991 22 12Z">
+                    </path>
+                </svg>
+                <span class="ml-4"> Continuar con Facebook</span>
+            </button>
+            <button (click)="redirectRegister()"
+                class="inline-flex items-center justify-center whitespace-nowrap rounded-full text-sm font-medium ring-offset-background
+                 transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring 
+                 focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 h-10 px-4 py-2 w-full bg-[#3dd2ba] hover:bg-[#63dbc7]  text-black hover:text-[#535e63]">
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" viewBox="0 0 24 24"
+                    class="fill-current">
+                    <path
+                        d="M13.845 2.25c-2.202 0-3.79 1.2-4.694 2.483a.155.155 0 0 1-.213.04 4.226 4.226 0 0 0-2.343-.708c-2.327 0-4.345 2.005-4.345 4.477 0 1.887 1.02 3.142 1.6 3.622a.167.167 0 0 1 .036.213c-.38.64-.761 1.776-.761 2.62 0 2.6 2.028 4.708 4.551 4.708.778 0 1.364-.15 1.606-.223a.157.157 0 0 1 .183.074c.434.759 1.759 2.194 3.973 2.194 2.267 0 4.492-1.83 4.693-4.33a.162.162 0 0 1 .129-.147c2.039-.394 3.49-2.352 3.49-4.497 0-2.137-1.248-3.367-1.988-3.871a.162.162 0 0 1-.069-.149c.229-2.848-1.894-6.506-5.848-6.506ZM5.11 14.712c0-.52.112-1.05.377-1.536.016-.029.077-.12.177-.097.397.115.79.173 1.265.173.482 0 .841-.394.841-.88a.86.86 0 0 0-.895-.87c-1.08 0-2.499-.968-2.499-2.753 0-1.534 1.19-2.722 2.596-2.722.546 0 1.01.108 1.594.48.21.135.428.37.849.37a.739.739 0 0 0 .673-.425c.266-.548 1.334-2.062 3.67-2.062 2.059 0 3.932 1.993 3.932 4.146 0 1.227-.401 1.917-.852 2.608a.985.985 0 0 0-.18.592c0 .552.431.93.903.93.716 0 1.189-.903 1.5-1.48a.105.105 0 0 1 .18-.011c.195.279.496.929.496 1.785 0 1.212-.944 2.61-2.642 2.765-.543.05-.843.35-.865.914-.063 1.58-1.293 2.776-2.825 2.776-1.9 0-2.942-1.927-2.744-3.51.08-.644-.415-.987-.853-.987a.894.894 0 0 0-.841.52c-.262.524-.276 1.585-.226 2.003.019.15-.052.233-.622.233-1.513-.002-3.009-1.167-3.009-2.962Z">
+                    </path>
+                </svg>
+                <span class="ml-4"> Continuar con el e-mail</span>
+            </button>
+        </div>
+        <div class="mt-6 flex justify-center">
+            <p class="text-sm">
+                ¿Ya tienes una cuenta? <a class="font-bold text-[#369e8f] hover:text-[#359e8e] hover:cursor-pointer"
+                    (click)="redirectSing()">Iniciar
+                    sesión</a>
+            </p>
+        </div>
+
+    </div>
+    <div class="mt-4 max-w-sm text-center">
+        <p class="text-[11px] text-white">
+            Sitio protegido por reCAPTCHA, la
+        </p>
+        <p class="text-[11px] text-white">
+            <a class="hover:text-gray-300 underline" target="_blank" href="https://policies.google.com/privacy">Política
+                de Privacidad</a> y los
+            <a class="hover:text-gray-300 underline" target="_blank" href="https://policies.google.com/terms">Términos
+                del Servicio</a> de Google aplican.
+        </p>
+    </div>
+
+</div>

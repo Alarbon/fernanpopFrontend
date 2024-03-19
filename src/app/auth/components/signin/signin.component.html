@@ -1,0 +1,78 @@
+<div class="flex flex-col items-center justify-center min-h-screen bg-[#535e63] p-4">
+    <div class="relative w-[400px] h-[535px] rounded-xl bg-white p-8">
+        <button (click)="redirectToHome()" class="absolute top-3 right-3 -mt-2 -mr-2 p-2  ">
+            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" viewBox="0 0 24 24">
+                <path fill="#29363D" fill-rule="evenodd"
+                    d="M4.47 4.47a.75.75 0 0 1 1.06 0L12 10.94l6.47-6.47a.75.75 0 1 1 1.06 1.06L13.06 12l6.47 6.47a.75.75 0 1 1-1.06 1.06L12 13.06l-6.47 6.47a.75.75 0 0 1-1.06-1.06L10.94 12 4.47 5.53a.75.75 0 0 1 0-1.06Z"
+                    clip-rule="evenodd"></path>
+            </svg>
+        </button>
+        <button (click)="redirectLogin()" class="absolute top-3 left-3 -mt-2 -mr-2 p-2">
+            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" viewBox="0 0 24 24">
+                <g clip-path="url(#a)">
+                    <path fill="#29363D" fill-rule="evenodd"
+                        d="M8.03 4.72a.75.75 0 0 1 0 1.06l-5.47 5.47h20.69a.75.75 0 0 1 0 1.5H2.56l5.47 5.47a.75.75 0 1 1-1.06 1.06L.22 12.53a.75.75 0 0 1 0-1.06l6.75-6.75a.75.75 0 0 1 1.06 0Z"
+                        clip-rule="evenodd"></path>
+                </g>
+                <defs>
+                    <clipPath id="a">
+                        <path fill="#fff" d="M0 0h24v24H0z"></path>
+                    </clipPath>
+                </defs>
+            </svg>
+        </button>
+
+        <h2 class="mt-8 text-start text-xl font-semibold text-gray-900">¡Te damos la bienvenida!</h2>
+        <form class="flex flex-col mt-8 " [formGroup]="formSignin" (ngSubmit)="signin()">
+            <div>
+                <div class="mb-1">
+                    <input
+                        class="flex h-[60px] w-full rounded-lg border border-black bg-background px-3 py-2 text-sm ring-offset-background file:border-0 file:bg-transparent file:text-sm file:font-medium placeholder:text-muted-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:cursor-not-allowed disabled:opacity-50"
+                        placeholder="Dirección de e-mail" type="email" formControlName="email" />
+                    <span class="text-xs text-[#f43e2f] ml-2"> &nbsp; {{errorEmail}} </span>
+
+                </div>
+                <div class="mb-1">
+                    <input
+                        class="flex h-[60px] w-full rounded-lg border border-black bg-background px-3 py-2 text-sm ring-offset-background file:border-0 file:bg-transparent file:text-sm file:font-medium placeholder:text-muted-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:cursor-not-allowed disabled:opacity-50"
+                        placeholder="Contraseña" type="password" formControlName="password" />
+                    <span class="text-xs text-[#f43e2f] ml-2"> &nbsp; {{errorPass}} </span>
+
+                </div>
+                <div>
+                    <img src="https://media.discordapp.net/attachments/1173755894958395393/1216178746583810189/reCAPTCHA.png?ex=65ff71b8&is=65ecfcb8&hm=fff001f8469b19749171ad4bdef903d368faffd005fae77c02eaf08e17fb2a3a&=&format=webp&quality=lossless"
+                        alt="reCAPTCHA">
+                </div>
+            </div>
+            <div>
+
+
+                <div class="mt-4 text-center">
+                    <a class="text-sm font-semibold text-[#038673] hover: hover:text-[#359e8f] hover:cursor-pointer">
+                        ¿Has olvidado tu contraseña?
+                    </a>
+                </div>
+                <div class="mt-4">
+                    <button class="inline-flex items-center justify-center whitespace-nowrap rounded-full
+             text-sm font-medium ring-offset-background transition-colors focus-visible:outline-none 
+             focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none 
+             disabled:opacity-50 bg-[#3dd2ba] hover:bg-[#63dbc7]  hover:text[#5a5e63] h-12 px-4 py-2 w-full ">
+                        Acceder a Fernanpop
+                    </button>
+                </div>
+            </div>
+        </form>
+
+    </div>
+    <div class="mt-4 max-w-sm text-center">
+        <p class="text-[11px] text-white">
+            Sitio protegido por reCAPTCHA, la
+        </p>
+        <p class="text-[11px] text-white">
+            <a class="hover:text-gray-300 underline" target="_blank" href="https://policies.google.com/privacy">Política
+                de Privacidad</a> y los
+            <a class="hover:text-gray-300 underline" target="_blank" href="https://policies.google.com/terms">Términos
+                del Servicio</a> de Google aplican.
+        </p>
+    </div>
+</div>

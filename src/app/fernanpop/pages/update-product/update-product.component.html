@@ -1,0 +1,112 @@
+<app-nav-bar></app-nav-bar>
+
+<div class="flex flex-col">
+    <div class="bg-gray-50 py-10">
+        <form [formGroup]="formUpdate" (ngSubmit)="updateProduct()" class="mx-auto max-w-4xl px-6">
+            <h1 class="text-3xl font-semibold">Actualiza tu anuncio</h1>
+
+            <div class="mt-6 bg-white">
+                <div class="rounded-lg border bg-card text-card-foreground shadow-sm w-full">
+                    <div class="flex flex-col space-y-1.5 p-6">
+                        <h3 class="text-2xl font-semibold whitespace-nowrap leading-none tracking-tight">Información del producto</h3>
+                    </div>
+                    <div class="p-6 bg-white">
+                        <div class="grid grid-cols-1 gap-4">
+                            <div class="flex flex-col space-y-1.5">
+                                <label for="product-info" class="text-sm font-medium">¿Qué vendes? Proporciona toda la información relevante</label>
+                                <input formControlName="nameProduct" class="flex h-10 w-full rounded-md border border-input bg-background px-3 py-2 text-sm ring-offset-background file:border-0 file:bg-transparent file:text-sm file:font-medium placeholder:text-muted-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:cursor-not-allowed disabled:opacity-50" id="product-info" 
+                                placeholder="Ejemplo: Sofa de tres plazas">
+                                <span class="text-xs text-[#f43e2f] ml-2"> &nbsp; {{errorName}} </span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="mt-6 bg-white">
+                <div class="rounded-lg border bg-card text-card-foreground shadow-sm w-full">
+                    <div class="flex flex-col space-y-1.5 p-6">
+                        <h3 class="text-2xl font-semibold whitespace-nowrap leading-none tracking-tight">Selecciona una categoría para tu anuncio</h3>
+                        <p class="text-sm text-muted-foreground">No te preocupes, te ayudaremos con algunas sugerencias cuando abras el desplegable</p>
+                    </div>
+                    <div class="p-6">
+                        <select formControlName="category" class="select flex h-10 w-full items-center justify-between rounded-md border border-input bg-background px-3 py-2 text-sm ring-offset-background placeholder:text-muted-foreground focus:outline-none focus:ring-2 focus:ring-ring focus:ring-offset-2 disabled:cursor-not-allowed disabled:opacity-50" id="category">
+                            <option hidden selected>Escoge la categoría</option>
+                            <option value="Cars and Motorcycles">Automóviles y Motos</option>
+                            <option value="Engine and Accessories">Motor y Accesorios</option>
+                            <option value="Fashion">Moda</option>
+                            <option value="Fashion Accessories">Accesorios de Moda</option>
+                            <option value="Real Estate">Bienes Raíces</option>
+                            <option value="TV, Audio and Photo">TV, Audio y Foto</option>
+                            <option value="Mobile Phones and Telephony">Teléfonos Móviles y Telefonía</option>
+                            <option value="Computers and Electronics">Computadoras y Electrónica</option>
+                            <option value="Sports and Leisure">Deportes y Ocio</option>
+                            <option value="Bikes">Bicicletas</option>
+                            <option value="Consoles and Video Games">Consolas y Videojuegos</option>
+                            <option value="Home and Garden">Hogar y Jardín</option>
+                            <option value="Appliances">Electrodomésticos</option>
+                            <option value="Cinema">Cine</option>
+                            <option value="Books">Libros</option>
+                            <option value="Music">Música</option>
+                            <option value="Children and Babies">Niños y Bebés</option>
+                            <option value="Collecting">Coleccionismo</option>
+                            <option value="Construction and Renovation">Construcción y Renovación</option>
+                            <option value="Industry and Agriculture">Industria y Agricultura</option>
+                            <option value="Employment">Empleo</option>
+                            <option value="Services">Servicios</option>
+                            <option value="Others">Otros</option>
+                        </select>
+                        <span class="text-xs text-[#f43e2f] ml-2"> &nbsp; {{errorCategory}} </span>
+                    </div>
+                </div>
+            </div>
+            <div class="mt-6 bg-white">
+                <div class="rounded-lg border bg-card text-card-foreground shadow-sm w-full">
+                    <div class="flex flex-col space-y-1.5 p-6">
+                        <h3 class="text-2xl font-semibold whitespace-nowrap leading-none tracking-tight">Información del producto</h3>
+                    </div>
+                    <div class="p-6">
+                        <div class="grid grid-cols-2 gap-4">
+                            <div class="flex flex-col space-y-1.5">
+                                <label for="product-state" class="text-sm font-medium">Estado del producto</label>
+                                <select formControlName="status" class="select flex h-10 w-full items-center justify-between rounded-md border border-input bg-background px-3 py-2 text-sm ring-offset-background placeholder:text-muted-foreground focus:outline-none focus:ring-2 focus:ring-ring focus:ring-offset-2 disabled:cursor-not-allowed disabled:opacity-50" id="product-state">
+                                    <option disabled hidden selected>Escoge el estado</option>
+                                    <option value="New">Nuevo</option>
+                                    <option value="Like New">Como Nuevo</option>
+                                    <option value="Good">Bueno</option>
+                                    <option value="Acceptable">Aceptable</option>
+                                    <option value="Used">Usado</option>
+                                    <option value="Worn">Desgastado</option>
+                                </select>
+                                <span class="text-xs text-[#f43e2f] ml-2"> &nbsp; {{errorStatus}} </span>
+                            </div>
+                            <div class="flex flex-col space-y-1.5">
+                                <label for="product-price" class="text-sm font-medium">Precio</label>
+                                <input formControlName="price" class="flex h-10 w-full rounded-md border border-input bg-background px-3 py-2 text-sm ring-offset-background file:border-0 file:bg-transparent file:text-sm file:font-medium placeholder:text-muted-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:cursor-not-allowed disabled:opacity-50" id="product-price" placeholder="Sé razonable..." type="number">
+                            </div>
+                            <div class="flex flex-col space-y-1.5">
+                                <label for="product-description" class="text-sm font-medium">Descripción</label>
+                                <textarea formControlName="description" class="flex min-h-[80px] w-full rounded-md border border-input bg-background px-3 py-2 text-sm ring-offset-background placeholder:text-muted-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:cursor-not-allowed disabled:opacity-50" id="product-description" placeholder="Añade información relevante como estado, modelo..."></textarea>
+                                <span class="text-xs text-[#f43e2f] ml-2"> &nbsp; {{errorDescription}} </span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="p-6 bg-white mt-6">
+                <div class="grid grid-cols-1 gap-4">
+                    <div class="flex flex-col space-y-1.5">
+                        <h3 class="text-2xl font-semibold whitespace-nowrap leading-none tracking-tight mb-6">Foto URL</h3>
+                        <input formControlName="image" class="flex h-10 w-full rounded-md border border-input bg-background px-3 py-2 text-sm ring-offset-background file:border-0 file:bg-transparent file:text-sm file:font-medium placeholder:text-muted-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:cursor-not-allowed disabled:opacity-50" id="product-info" placeholder="Inserta la url de su foto">
+                        <span class="text-xs text-[#f43e2f] ml-2"> &nbsp; {{errorDescription}} </span>
+                    </div>
+                </div>
+            </div>
+            <div class="flex justify-center mt-6">
+                <button type="submit" class="inline-flex items-center justify-center whitespace-nowrap rounded-full text-sm md:text-base font-medium ring-offset-background transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 h-12 px-6 lg:px-8 py-2 bg-[#13c1ac] hover:bg-[#0f9989] text-white">
+                    Actualizar Producto
+                </button>
+            </div>
+        </form>
+    </div>
+    <div class="mt-20 lg:hidden"></div>
+</div>

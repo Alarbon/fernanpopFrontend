@@ -1,0 +1,19 @@
+<div class="flex flex-col sm:flex-row items-center space-x-2 mt-6 w-[300px] sm:w-[600px] bg-white p-4 rounded-xl">
+    <div class="flex justify-center items-center mb-4 sm:mr-4 w-72 sm:w-96 h-52">
+        <img src="{{product?.image || 'https://placekitten.com/200/300'}}" alt="imagen"
+            class="h-full w-full rounded-xl"
+            style="object-fit: cover; object-position: center;">
+    </div>
+    <div class="flex flex-col space-y-2">
+        <span class="text-lg font-semibold"> {{product?.price}} €</span>
+        <span class="font-medium text-gray-700">{{product?.name}} </span>
+        <span class="text-sm text-gray-500">Estado: {{product!.status | traduceStatus}}</span>
+        <p class="text-sm">
+            {{product?.description}}
+        </p>
+        <div class="flex justify-center items-center rounded-full whitespace-nowrap border px-2.5 py-0.5 text-xs 
+            font-semibold transition-colors focus:outline-none focus:ring-2 focus:ring-ring focus:ring-offset-2
+             border-transparent  w-20" appHighlight [randomNumber]="randomNumber">
+        </div>
+    </div>
+</div>

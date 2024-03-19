@@ -1,0 +1,54 @@
+<div class="flex flex-col space-y-8 ">
+    <div class="max-w-screen-md mx-auto py-4 ">
+
+
+        @if (!productResponse()) {
+        @for (item of [].constructor(8); track $index) {
+        <app-item-search-skeleton></app-item-search-skeleton>
+        }
+        }@else {
+
+        @if (productResponse()?.products?.length !== 0) {
+        @for (item of productResponse()?.products; track $index) {
+        <app-item-search-product [product]="item" (click)="goToProduct(item._id!)"
+            class="hover:-translate-y-2 transition-all hover:cursor-pointer"></app-item-search-product>
+        }
+        }@else {
+        <div class="flex flex-col items-center justify-center h-screen  ">
+            <main class="flex flex-col items-center justify-center px-4 sm:px-6 lg:px-8">
+                <img src="/assets/images/pop-no-results.svg" alt="Empty state illustration"
+                    class="mb-4  h-64 max-w-full sm:max-w-xl md:max-w-xl lg:max-w-2xl xl:max-w-3xl" />
+                <h1 class="text-md md:text-lg lg:text-xl font-semibold mb-2 text-center">Nada por aquí...</h1>
+                <p class="text-center mb-8 md:mb-12 text-[#5c7a97] max-w-prose">
+                    Parece que por el momento lo que buscas no se encuentra en Wallapop. Mientras tanto, ¿por qué no
+                    echas un vistazo al resto de productos?
+                </p>
+                <button routerLink="/home"
+                    class="inline-flex items-center justify-center whitespace-nowrap rounded-full text-sm md:text-base font-medium ring-offset-background transition-colors 
+                        focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 
+                        disabled:pointer-events-none disabled:opacity-50 h-12 px-6 lg:px-8 py-2 bg-[#13c1ac] hover:bg-[#0f9989] text-white">
+                    Iniciar nueva búsqueda
+                </button>
+            </main>
+
+            <div class="mt-20 lg:hidden"></div>
+        </div>
+        }
+        }
+
+    </div>
+
+    @if (productResponse()?.next) {
+    <div class="flex justify-center py-6 mt-6">
+        <button class="inline-flex items-center justify-center whitespace-nowrap rounded-full 
+                text-sm font-bold bg-[#13c1ac] text-white transition-colors focus-visible:outline-none
+                 h-12 px-8 py-2" (click)="loadMore()">
+            Cargar más
+        </button>
+    </div>
+    }
+
+
+
+
+</div>

@@ -1,0 +1,55 @@
+<app-nav-bar></app-nav-bar>
+<div class="flex flex-col max-w-screen-lg mx-auto px-6">
+    <div>
+        <h2 class="text-3xl font-semibold mb-4 mt-4">Mis productos</h2>
+        <div class="flex flex-col space-y-8 ">
+
+
+            @if (!products) {
+            @for (item of [].constructor(8); track $index) {
+            <app-skeletons-card-product></app-skeletons-card-product>
+            }
+            }@else {
+
+            @if (products.length!=0) {
+            @for (product of products; track $index) {
+
+            <div
+                class="flex flex-col sm:flex-row items-center space-x-2 mt-6 w-[300px] sm:w-[600px] bg-white p-4 rounded-xl">
+                <div class="flex justify-center items-center mb-4 sm:mr-4 w-72 sm:w-96 h-52">
+                    <img src="{{product?.image || 'https://placekitten.com/200/300'}}" alt="imagen"
+                        class="h-full w-full rounded-xl" style="object-fit: cover; object-position: center;">
+                </div>
+                <div class="flex flex-col space-y-2">
+                    <span class="text-lg font-semibold"> {{product?.price}} €</span>
+                    <span class="font-medium text-gray-700">{{product?.name}} </span>
+                    <span class="text-sm text-gray-500">Estado: {{product!.status }}</span>
+                    <p class="text-sm">
+                        {{product?.description}}
+                    </p>
+
+                </div>
+                <div class="mt-4">
+                    <button class=" bg-red-500 text-white px-2 py-1 rounded-md z-10 mb-6 mr-6"
+                        (click)="deleteProduct(product._id!)">Eliminar</button>
+
+                    <button class=" bg-blue-500 text-white px-2 py-1 rounded-md z-10"
+                        (click)="editProduct(product._id!)">Editar</button>
+
+                </div>
+            </div>
+
+            }
+            }@else {
+            <div class="flex justify-center items-center w-full h-96">
+                <p class="text-2xl font-semibold text-gray-500">No hay productos</p>
+            </div>
+            }
+            }
+
+        </div>
+
+
+    </div>
+    <div class="mt-20 lg:hidden"></div>
+</div>

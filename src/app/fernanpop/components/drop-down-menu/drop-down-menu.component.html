@@ -1,0 +1,63 @@
+<div class="flex flex-row items-center bg-white border-t-2 border-b-2 p-4">
+    <div class="dropdown">
+        <div tabindex="0" role="button" class="flex flex-row items-center">
+            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="#5c7a89" viewBox="0 0 24 24">
+                <path fill-rule="evenodd"
+                    d="M3 6a.75.75 0 0 1 .75-.75h16.5a.75.75 0 0 1 0 1.5H3.75A.75.75 0 0 1 3 6Zm0 6a.75.75 0 0 1 .75-.75h16.5a.75.75 0 0 1 0 1.5H3.75A.75.75 0 0 1 3 12Zm0 6a.75.75 0 0 1 .75-.75h16.5a.75.75 0 0 1 0 1.5H3.75A.75.75 0 0 1 3 18Z"
+                    clip-rule="evenodd"></path>
+            </svg>
+            <span class="ml-4 text-[#334048] text-sm hover:underline ">Todas las categorías</span>
+        </div>
+        <ul tabindex="0" class="z-10 dropdown-content menu p-4 shadow bg-base-100 rounded-box w-[300px]   sm:w-[600px] ">
+            <div class="grid grid-cols-2  sm:grid-cols-3 gap-4 hover:cursor-pointer" >
+                <div (click)="searchCategory('Cars and Motorcycles')"><a class="block hover:underline">Automóviles y
+                        Motos</a></div>
+                <div (click)="searchCategory('Engine and Accessories')"><a class="block hover:underline">Motor y
+                        Accesorios</a></div>
+                <div (click)="searchCategory('Fashion')"><a class="block hover:underline">Moda</a></div>
+                <div (click)="searchCategory('Fashion Accessories')"><a class="block hover:underline">Accesorios de
+                        Moda</a></div>
+                <div (click)="searchCategory('Real Estate')"><a class="block hover:underline">Bienes Raíces</a></div>
+                <div (click)="searchCategory('TV, Audio and Photo')"><a class="block hover:underline">TV, Audio y
+                        Foto</a></div>
+                <div (click)="searchCategory('Mobile Phones and Telephony')"><a class="block hover:underline">Teléfonos
+                        Móviles y Telefonía</a></div>
+                <div (click)="searchCategory('Computers and Electronics')"><a class="block hover:underline">Computadoras
+                        y Electrónica</a></div>
+                <div (click)="searchCategory('Sports and Leisure')"><a class="block hover:underline">Deportes y Ocio</a>
+                </div>
+                <div (click)="searchCategory('Bikes')"><a class="block hover:underline">Bicicletas</a></div>
+                <div (click)="searchCategory('Consoles and Video Games')"><a class="block hover:underline">Consolas y
+                        Videojuegos</a></div>
+                <div (click)="searchCategory('Home and Garden')"><a class="block hover:underline">Hogar y Jardín</a>
+                </div>
+                <div (click)="searchCategory('Appliances')"><a class="block hover:underline">Electrodomésticos</a></div>
+                <div (click)="searchCategory('Cinema')"><a class="block hover:underline">Cine</a></div>
+                <div (click)="searchCategory('Books')"><a class="block hover:underline">Libros</a></div>
+                <div (click)="searchCategory('Music')"><a class="block hover:underline">Música</a></div>
+                <div (click)="searchCategory('Children and Babies')"><a class="block hover:underline">Niños y Bebés</a>
+                </div>
+                <div (click)="searchCategory('Collecting')"><a class="block hover:underline">Coleccionismo</a></div>
+                <div (click)="searchCategory('Construction and Renovation')"><a
+                        class="block hover:underline">Construcción y Renovación</a></div>
+                <div (click)="searchCategory('Industry and Agriculture')"><a class="block hover:underline">Industria y
+                        Agricultura</a></div>
+                <div (click)="searchCategory('Employment')"><a class="block hover:underline">Empleo</a></div>
+                <div (click)="searchCategory('Services')"><a class="block hover:underline">Servicios</a></div>
+                <div (click)="searchCategory('Others')"><a class="block hover:underline">Otros</a></div>
+            </div>
+
+        </ul>
+
+    </div>
+    <button (click)="searchCategory('Consoles and Video Games')"
+        class="ml-4 text-[#334048] text-sm hover:underline">Consolas y
+        Videojuegos</button>
+    <button (click)="searchCategory('TV, Audio and Photo')" class="ml-4 text-[#334048] text-sm hover:underline">TV, Audio y Foto</button>
+    <button (click)="searchCategory('Cars and Motorcycles')"
+        class="ml-4 text-[#334048] text-sm hover:underline hidden lg:block">Coches</button>
+    <button (click)="searchCategory('Books')"
+        class="ml-4 text-[#334048] text-sm hover:underline hidden lg:block">Libros</button>
+    <button (click)="searchCategory('Others')"
+        class="ml-4 text-[#334048] text-sm hover:underline hidden lg:block">Otros</button>
+</div>
